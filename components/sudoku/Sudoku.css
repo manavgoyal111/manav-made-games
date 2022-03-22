@@ -1,0 +1,177 @@
+.sudokuGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mid);
+  color: var(--light);
+}
+
+.sudokuGameSetup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sudokuGameSetup h3 {
+  font-size: 1em;
+  margin: 1em;
+}
+
+.sudokuGameSetupMode,
+.sudokuGameSetupTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2em;
+  flex-wrap: wrap;
+}
+
+.sudokuGameBtn {
+  margin: 0 0 1em 0;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: var(--dark2);
+}
+
+.sudokuGameBtn:hover {
+  background-color: var(--light2);
+}
+
+.sudokuGameInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 1em;
+}
+
+.sudokuGamePlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+
+.sudokuGamePlayBoard {
+  display: grid;
+  grid-template-rows: repeat(9, 3vw);
+  grid-template-columns: repeat(9, 3vw);
+  border: 1px solid black;
+  background-color: var(--dark2);
+}
+
+.sudokuGamePlayBoardTile {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sudokuGamePlayNumbers {
+  display: grid;
+  grid-template-rows: repeat(9, 2.5vw);
+  grid-template-columns: repeat(1, 2vw);
+  margin: 0 3em;
+  cursor: pointer;
+  background-color: var(--dark2);
+}
+
+.sudokuGamePlayNumbers > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.sudokuGamePlayNumbers > div:hover {
+  background-color: var(--dark);
+}
+
+.dark {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.hidden {
+  display: none;
+}
+
+.underline {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.incorrect {
+  color: red;
+}
+
+.rightBorder {
+  border-right: 4px solid black;
+}
+
+.bottomBorder {
+  border-bottom: 4px solid black;
+}
+
+@media screen and (max-width: 800px) {
+  .sudokuGameSetup {
+    flex-direction: column;
+  }
+
+  .sudokuGameSetup h3 {
+    margin: 0.5em;
+  }
+
+  .sudokuGamePlayBoard {
+    grid-template-rows: repeat(9, 5vw);
+    grid-template-columns: repeat(9, 5vw);
+  }
+
+  .sudokuGamePlayNumbers {
+    grid-template-rows: repeat(9, 4.5vw);
+    grid-template-columns: repeat(1, 4vw);
+    margin: 0 2em;
+  }
+
+  .sudokuGameBtn {
+    margin: 1em 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sudokuGameSetup h3 {
+    font-size: 0.9em;
+    margin: 0.5em;
+  }
+
+  .sudokuGameSetupMode,
+  .sudokuGameSetupTime {
+    /* flex-direction: column; */
+    font-size: 0.8em;
+    margin: 0;
+  }
+
+  .sudokuGameInfo {
+    font-size: 0.8em;
+  }
+
+  .sudokuGamePlay {
+    font-size: 0.8em;
+  }
+
+  .sudokuGamePlayBoard {
+    grid-template-rows: repeat(9, 7vw);
+    grid-template-columns: repeat(9, 7vw);
+  }
+
+  .sudokuGamePlayNumbers {
+    grid-template-rows: repeat(9, 5.5vw);
+    grid-template-columns: repeat(1, 5vw);
+    margin: 0 1em;
+  }
+}

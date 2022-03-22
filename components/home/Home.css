@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mid);
+  min-height: 85vh;
+}
+
+.homeComponent {
+  border: 2px solid black;
+  margin: 0.5em;
+  padding: 0 1em;
+  border-radius: 10px;
+  background-color: var(--dark2);
+  /* color: var(--light2); */
+}

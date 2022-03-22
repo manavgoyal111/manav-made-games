@@ -1,0 +1,105 @@
+.enteronlyprime {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: center;
+  background-color: var(--mid);
+  min-height: 80vh;
+}
+
+.enteronlyprime h1 {
+  font-size: 3em;
+  margin-top: 0;
+}
+
+.primeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 2em;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: var(--dark2);
+}
+
+.primeFormText {
+  padding: 1em;
+  border-radius: 10px;
+  font-size: 2em;
+  background-color: var(--light);
+  font-weight: bold;
+  width: 80%;
+}
+
+.primeFormBtn {
+  padding: 0.4em;
+  font-size: 1.5em;
+  margin-top: 1em;
+  border-radius: 10px;
+  background-color: var(--dark);
+  color: var(--light);
+  cursor: pointer;
+}
+
+.primeFormBtn:hover {
+  background-color: var(--mid);
+  color: black;
+}
+
+.primeScore {
+  align-self: flex-end;
+  font-weight: bold;
+  font-size: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+}
+
+.primeScore p {
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .enteronlyprime h1 {
+    font-size: 2em;
+  }
+
+  .primeForm {
+    width: 80%;
+    padding: 1em;
+  }
+
+  .primeFormText {
+    padding: 0.5em;
+    font-size: 1.5em;
+  }
+
+  .primeFormBtn {
+    font-size: 1em;
+  }
+
+  .primeScore {
+    align-self: center;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .enteronlyprime h1 {
+    font-size: 1.2em;
+  }
+
+  .primeFormText {
+    padding: 0.3em;
+    font-size: 1em;
+  }
+
+  .primeFormBtn {
+    font-size: 0.8em;
+  }
+
+  .primeScore {
+    font-size: 0.8em;
+  }
+}
