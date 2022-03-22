@@ -1,34 +1,34 @@
 .homeComponentItem {
-  overflow: hidden;
+	overflow: hidden;
 }
 
 .homeComponentItem li {
-  list-style: none;
-  transition: transform 1s ease-in-out;
+	list-style: none;
+	transition: transform 1s ease-in-out;
 }
 
 .homeComponentItem li:hover {
-  transform: scale(1.2);
+	transform: scale(1.2);
 }
 
 .homeComponentItem > li > a {
-  text-decoration: none;
-  color: var(--light);
-  font-size: 1em;
-  font-weight: bold;
-  text-align: center;
+	text-decoration: none;
+	color: var(--light);
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
 }
 
 .homeComponentItem li a:hover {
-  color: var(--dark);
+	color: var(--dark);
 }
 
-.homeComponentItemHeading{
-  /* margin: 0.5; */
+.homeComponentItemHeading {
+	/* margin: 0.5; */
 }
 
 @media screen and (max-width: 370px) {
-  .homeComponentItem > li > a {
-    font-size: 0.5em;
-  }
+	.homeComponentItem > li > a {
+		font-size: 0.5em;
+	}
 }

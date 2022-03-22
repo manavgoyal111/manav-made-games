@@ -1,42 +1,42 @@
 .footer {
-  background-color: var(--dark);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 1.5em;
+	background-color: var(--dark);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-size: 1.5em;
 }
 
 .footerSocial {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .footerSocialItem {
-  list-style: none;
+	list-style: none;
 }
 
 .footerSocialItem a {
-  display: flex;
-  flex-direction: row;
-  color: var(--light);
-  margin: 0.5em 1em;
-  text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	color: var(--light);
+	margin: 0.5em 1em;
+	text-decoration: none;
 }
 
 .footerSocialItemIcon {
-  margin: 2px;
+	margin: 2px;
 }
 
 @media screen and (max-width: 450px) {
-  .footer {
-    font-size: 0.8em;
-  }
+	.footer {
+		font-size: 0.8em;
+	}
 }
 
 @media screen and (max-width: 240px) {
-  .footer {
-    font-size: 0.5em;
-  }
+	.footer {
+		font-size: 0.5em;
+	}
 }
