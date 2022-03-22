@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import HomeComponent from "../components/HomeComponent";
 
 export default function Home() {
 	return (
-		<div className={styles.container}>
+		<div className={styles.home}>
 			<Head>
 				<title>MMGames</title>
 				<meta
@@ -16,7 +16,14 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<h1 className={styles.title}>Namaste Dunia</h1>
+			<div className={styles.homeComponent}>
+				<HomeComponent name="Tic-Tac-Toe" link="/tictactoe" />
+				<HomeComponent name="Sudoku" link="/sudoku" />
+				<HomeComponent name="Rock-Paper-Scissors" link="/rockpaperscissor" />
+				<HomeComponent name="Snake" link="/snake" />
+				<HomeComponent name="Enter Only Prime" link="/enteronlyprime" />
+				<HomeComponent name="Guess the Number" link="/guessthenumber" />
+			</div>
 		</div>
 	);
 }
