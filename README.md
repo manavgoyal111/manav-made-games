@@ -1,9 +1,11 @@
 # Manav Made Games
 
 ---
+
 ## Games
 
 ---
+
 ### Tic-Tac-Toe (Cross and Zero)
 ### Sudoku
 ### Rock Paper Scissor
@@ -14,6 +16,7 @@
 ## Tech Used
 
 ---
+
 ### HTML
 ### CSS
 ### JavaScript

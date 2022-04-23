@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../styles/HomeComponent.module.css";
+import styles from "../../styles/home/HomeComponent.module.css";
 
 function HomeComponent(props) {
 	const { name, link } = props;

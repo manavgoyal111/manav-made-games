@@ -1,0 +1,25 @@
+/* Logo */
+#invertLogoColor {
+  filter: invert(100%);
+}
+
+/* Link */
+#active {
+  color: var(--dark2);
+}
+
+/* Text */
+#hidden {
+  display: none;
+}
+
+/* Button */
+#disabled {
+  cursor: default;
+}
+
+#disabled:hover {
+  background-color: var(--dark2);
+  color: var(--light);
+  box-shadow: none;
+}

@@ -5,7 +5,7 @@ import {
 	FaGithub,
 	FaLinkedinIn,
 } from "react-icons/fa";
-import styles from "../styles/Footer.module.css";
+import styles from "../../styles/general/Footer.module.css";
 
 function Footer() {
 	return (

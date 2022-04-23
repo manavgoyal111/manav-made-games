@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Bulb.module.css";
+import "../../styles/general/Bulb.module.css";
 import { FaLightbulb, FaRegLightbulb } from "react-icons/fa";
 
 function Bulb(props) {

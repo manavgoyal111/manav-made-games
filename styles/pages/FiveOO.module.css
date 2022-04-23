@@ -1,0 +1,13 @@
+.FiveOO {
+  background-color: var(--dark);
+  color: var(--light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.FiveOO>h1 {
+  margin: 1rem 0;
+}
