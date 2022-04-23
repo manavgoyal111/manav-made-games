@@ -5,7 +5,9 @@
 
 /* Link */
 #active {
-  color: var(--dark2);
+  background-color: var(--dark2);
+  color: var(--light2);
+  border-radius: 5px;
 }
 
 /* Text */

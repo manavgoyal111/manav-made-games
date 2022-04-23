@@ -18,42 +18,8 @@ import cover4 from "./cover/4.jpg";
 import music4 from "./music/4.mp3";
 import cover5 from "./cover/5.jpg";
 import music5 from "./music/5.mp3";
-import gif from "./musicgif.gif";
 
 function MusicPlayer() {
-	const musicArray = [
-		{
-			id: 1,
-			cover: cover1,
-			music: music1,
-			name: "I am a Barbie Girl",
-		},
-		{
-			id: 2,
-			cover: cover2,
-			music: music2,
-			name: "Clash Royle Theme Song",
-		},
-		{
-			id: 3,
-			cover: cover3,
-			music: music3,
-			name: "Clash Royle Gameplay",
-		},
-		{
-			id: 4,
-			cover: cover4,
-			music: music4,
-			name: "Doremon Title Song",
-		},
-		{
-			id: 5,
-			cover: cover5,
-			music: music5,
-			name: "Friends Title Song",
-		},
-	];
-
 	// Variables
 	// const [audioElement, setAudioElement] = useState(new Audio(musicArray[2].music));
 	const [currentMusic, setCurrentMusic] = useState(0);

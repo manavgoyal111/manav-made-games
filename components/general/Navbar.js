@@ -37,8 +37,8 @@ export default function Navbar({ setLightMode }) {
 			<div>
 				<ul className={styles.navLinks}>
 					<li>
-						<Link href="/musicplayer">
-							<a id={router.pathname === "/musicplayer" ? "active" : ""}>
+						<Link href="/music-player">
+							<a id={router.pathname === "/music-player" ? "active" : ""}>
 								Music Player
 							</a>
 						</Link>

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import styles from "../styles/pages/FiveOO.module.css";
-import Button from "../components/utils/Button";
+import Button from "../components/utilities/Button";
 
 export default function FiveOO() {
 	return (
