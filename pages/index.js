@@ -1,6 +1,16 @@
+import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/home/Home.module.css";
-import HomeComponent from "../components/home/HomeComponent";
+
+const gamesData = [
+	{ name: "Tic Tac Toe", slug: "tictactoe" },
+	{ name: "Sudoku", slug: "sudoku" },
+	{ name: "Rock Paper Scissors", slug: "rockpaperscissor" },
+	{ name: "Snake", slug: "snake" },
+	{ name: "Enter Only Prime", slug: "enteronlyprime" },
+	{ name: "Guess the Number", slug: "guessthenumber" },
+];
 
 export default function Home() {
 	return (
@@ -9,13 +19,18 @@ export default function Home() {
 				<title>Manav Made Games</title>
 			</Head>
 
-			<div className={styles.homeComponent}>
-				{/* <HomeComponent name="Tic-Tac-Toe" link="/tictactoe" />
-				<HomeComponent name="Sudoku" link="/sudoku" />
-				<HomeComponent name="Rock-Paper-Scissors" link="/rockpaperscissor" />
-				<HomeComponent name="Snake" link="/snake" />
-				<HomeComponent name="Enter Only Prime" link="/enteronlyprime" />
-				<HomeComponent name="Guess the Number" link="/guessthenumber" /> */}
+			<h1>All Games</h1>
+
+			<div className={styles.homeGames}>
+				{gamesData.map((game, idx) => (
+					<Link href={`/${game.slug}`} key={idx}>
+						<a>
+							<div className={styles.homeGamesItem}>
+								<h1>{game.name}</h1>
+							</div>
+						</a>
+					</Link>
+				))}
 			</div>
 		</div>
 	);

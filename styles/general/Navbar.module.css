@@ -17,6 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: clamp(1.3rem, 50%, 2rem);
 }
 
 .navLinks>li {
