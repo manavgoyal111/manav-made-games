@@ -1,12 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { FaLightbulb } from "react-icons/fa";
+import { HiLightBulb } from "react-icons/hi";
 import styles from "../../styles/general/Navbar.module.css";
 import { CredentialsContext } from "../../context/CredentialsContext";
-import Bulb from "./Bulb";
 
-function Navbar({ setLightMode }) {
+export default function Navbar({ setLightMode }) {
 	// React Router Variable
 	const router = useRouter();
 
@@ -21,38 +22,37 @@ function Navbar({ setLightMode }) {
 	};
 
 	return (
-		<div className={styles.navbar}>
-			<div className={styles.navLogo}>
-				<Link href="/" passHref>
+		<nav className={styles.nav}>
+			<Link href="/">
+				<a className={styles.navLogo}>
 					<Image
-						src="/images/MMGamesLogo.png"
-						alt="MMGames"
-						height="50px"
-						width="50px"
-						className={styles.navLogoImg}
+						src="https://ik.imagekit.io/manav11goyal11/mmg/tr:600/nav-logo.png"
+						alt="Logo"
+						height={40}
+						width={40}
 					/>
-				</Link>
+				</a>
+			</Link>
+
+			<div>
+				<ul className={styles.navLinks}>
+					<li>
+						<Link href="/musicplayer">
+							<a id={router.pathname === "/musicplayer" ? "active" : ""}>
+								Music Player
+							</a>
+						</Link>
+					</li>
+				</ul>
 			</div>
-			<div className={styles.navLinks}>
-				<li>
-					<Link href="/">
-						<a id={router.pathname === "/" ? "active" : ""}>Home</a>
-					</Link>
-				</li>
-				<li>
-					<Link href="/musicplayer">Music Player</Link>
-				</li>
-			</div>
+
 			<div
 				onClick={() => changeMode(!lightMode)}
-				id={!lightMode ? "invertLogoColor" : ""}
 				className={styles.navBulb}
+				id={!lightMode ? `${styles["navBulbMove"]}` : ""}
 			>
-				<Bulb />
-				{/* {!lightMode ? <FaMoon size={15} /> : <FaRegSun size={15} />} */}
+				{!lightMode ? <FaLightbulb size={20} /> : <HiLightBulb size={30} />}
 			</div>
-		</div>
+		</nav>
 	);
 }
-
-export default Navbar;

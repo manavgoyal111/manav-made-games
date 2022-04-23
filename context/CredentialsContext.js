@@ -3,8 +3,6 @@ import { useState, useEffect, createContext } from "react";
 export const CredentialsContext = createContext();
 
 export const CredentialsProvider = ({ children }) => {
-	// Variables
-
 	// Use State Variable
 	const [lightMode, setLightMode] = useState(null);
 

@@ -7,7 +7,7 @@ import { CredentialsProvider } from "../context/CredentialsContext";
 import Navbar from "../components/general/Navbar";
 import Footer from "../components/general/Footer";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
 	// Use State
 	const [lightMode, setLightMode] = useState(true);
 
@@ -24,11 +24,11 @@ function MyApp({ Component, pageProps }) {
 			<style jsx global>
 				{`
 					:root {
-						--dark: ${!lightMode ? "#00111c" : "#f8f9fa"};
-						--dark2: ${!lightMode ? "#00406c" : "#dee2e6"};
-						--mid: ${!lightMode ? "#6b127b" : "#6b127b"};
-						--light2: ${!lightMode ? "#dee2e6" : "#00406c"};
-						--light: ${!lightMode ? "#f8f9fa" : "#00111c"};
+						--dark: ${!lightMode ? "#38a3a5" : "#ffffff"};
+						--dark2: ${!lightMode ? "#57cc99" : "#bffccd"};
+						--mid: ${!lightMode ? "#80ed99" : "#80ed99"};
+						--light2: ${!lightMode ? "#bffccd" : "#57cc99"};
+						--light: ${!lightMode ? "#ffffff" : "#38a3a5"};
 						--red: red;
 						--yellow: rgb(151, 151, 35);
 					}
@@ -51,5 +51,3 @@ function MyApp({ Component, pageProps }) {
 		</CredentialsProvider>
 	);
 }
-
-export default MyApp;

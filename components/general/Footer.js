@@ -1,63 +1,44 @@
 import React from "react";
-import {
-	FaRegCopyright,
-	FaUserAlt,
-	FaGithub,
-	FaLinkedinIn,
-} from "react-icons/fa";
+import { FaRegCopyright, FaUserAlt, FaGithub } from "react-icons/fa";
 import styles from "../../styles/general/Footer.module.css";
 
-function Footer() {
+export default function Footer() {
 	return (
-		<div className={styles.footer}>
-			<div className={styles.footerSocial}>
-				<li className={styles.footerSocialItem}>
-					<a href="manavgoyal.me" target="_blank">
-						<div className={styles.footerSocialItemIcon}>
-							<FaRegCopyright />
-						</div>{" "}
+		<footer className={styles.footer}>
+			<div className={styles.footerInfo}>
+				<div>
+					<a href="https://manav.vercel.app/" target="_blank" rel="noreferrer">
 						Manav Goyal
 					</a>
-				</li>
-				<li className={styles.footerSocialItem}>
+				</div>
+				<span className={styles.footerLine}></span>
+				<div>Copyright © 2022</div>
+			</div>
+
+			<div className={styles.footerLinks}>
+				<div>
 					<a
-						href="mailto:manavgoyaltheboss@gmail.com"
+						href="mailto:manav.goyal.dev@gmail.com"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<div className={styles.footerSocialItemIcon}>
+						<div className={styles.footerLinksIcon}>
 							<FaUserAlt />
-						</div>{" "}
-						manavgoyaltheboss@gmail.com
+						</div>
 					</a>
-				</li>
-				<li className={styles.footerSocialItem}>
-					<a
-						href="https://www.linkedin.com/in/manav-goyal"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<div className={styles.footerSocialItemIcon}>
-							<FaLinkedinIn />
-						</div>{" "}
-						LinkedIn
-					</a>
-				</li>
-				<li className={styles.footerSocialItem}>
+				</div>
+				<div>
 					<a
 						href="https://github.com/manavgoyal111"
 						target="_blank"
 						rel="noreferrer"
 					>
-						<div className={styles.footerSocialItemIcon}>
+						<div className={styles.footerLinksIcon}>
 							<FaGithub />
-						</div>{" "}
-						GitHub
+						</div>
 					</a>
-				</li>
+				</div>
 			</div>
-		</div>
+		</footer>
 	);
 }
-
-export default Footer;

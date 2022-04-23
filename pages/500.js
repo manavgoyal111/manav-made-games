@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/pages/FiveOO.module.css";
 import Button from "../components/utils/Button";
 
-const FiveOO = () => {
+export default function FiveOO() {
 	return (
 		<div className={styles.FiveOO}>
 			<h1>500 Error</h1>
@@ -14,6 +14,4 @@ const FiveOO = () => {
 			</Link>
 		</div>
 	);
-};
-
-export default FiveOO;
+}
