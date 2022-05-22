@@ -1,18 +1,16 @@
-import { connect } from "react-redux";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/home/Home.module.css";
 import { GamesData } from "../components/home/GameData";
 
-function Home({ colorMode }) {
+function Home() {
 	return (
 		<div className={styles.home}>
 			<Head>
 				<title>Manav Made Games</title>
 			</Head>
 
-			<h1>{colorMode ? "true" : "false"}</h1>
-			{/* <h1>All Games</h1> */}
+			<h1>All Games</h1>
 
 			<div className={styles.homeGames}>
 				{GamesData.map((game, idx) => (
@@ -29,8 +27,4 @@ function Home({ colorMode }) {
 	);
 }
 
-const mapStateToProps = (state) => ({
-	colorMode: state.colorModeReducer.colorMode,
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;

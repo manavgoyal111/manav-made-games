@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.5em;
 }
 
 ::-webkit-scrollbar-track {
@@ -8,11 +8,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--light);
+  background: var(--light2);
   border-radius: 2px;
-  outline: 1px solid slategrey;
+  outline: 1px solid var(--light);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--light2);
+  background: var(--light);
+  /* cursor: pointer; */
 }

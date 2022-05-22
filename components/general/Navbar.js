@@ -19,9 +19,9 @@ function Navbar({ setLightMode, colorMode, setColorMode }) {
 	};
 
 	return (
-		<nav className={styles.nav}>
+		<div className={styles.navbar}>
 			<Link href="/">
-				<a className={styles.navLogo}>
+				<a className={styles.navbarLogo}>
 					<Image
 						src="https://ik.imagekit.io/manav11goyal11/mmg/tr:600/nav-logo.png"
 						alt="Logo"
@@ -31,8 +31,8 @@ function Navbar({ setLightMode, colorMode, setColorMode }) {
 				</a>
 			</Link>
 
-			<div>
-				<ul className={styles.navLinks}>
+			<nav>
+				<ul className={styles.navbarLinks}>
 					<li>
 						<Link href="/music-player">
 							<a id={router.pathname === "/music-player" ? "active" : ""}>
@@ -41,16 +41,16 @@ function Navbar({ setLightMode, colorMode, setColorMode }) {
 						</Link>
 					</li>
 				</ul>
-			</div>
+			</nav>
 
 			<div
 				onClick={() => changeMode()}
-				className={styles.navBulb}
-				id={colorMode ? `${styles["navBulbMove"]}` : ""}
+				className={styles.navbarBulb}
+				id={!colorMode ? `${styles["navbarBulbMove"]}` : ""}
 			>
-				{colorMode ? <FaLightbulb size={20} /> : <HiLightBulb size={30} />}
+				{!colorMode ? <FaLightbulb size={20} /> : <HiLightBulb size={30} />}
 			</div>
-		</nav>
+		</div>
 	);
 }
 

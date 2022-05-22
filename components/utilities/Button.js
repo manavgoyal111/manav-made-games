@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../../styles/utilities/Button.module.css";
 
 const Button = ({ btnName }) => {
@@ -7,7 +6,7 @@ const Button = ({ btnName }) => {
 
 export default Button;
 
-// Prop Values
+// Default Prop Value
 Button.defaultProps = {
 	btnName: "Button",
 };

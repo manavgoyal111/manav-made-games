@@ -12,9 +12,8 @@ html,
 body {
   margin: 0;
   font-family: "Baloo Bhaina 2", cursive;
-  font-size: clamp(1rem, 50%, 2rem);
+  font-size: clamp(1em, 50%, 2em);
   line-height: 1.5;
-  /* Or 1.6 */
 }
 
 a {

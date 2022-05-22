@@ -3,22 +3,22 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background-color: var(--mid);
+  background-color: var(--dark);
   color: var(--light);
-  padding: 2rem 0;
+  padding: 2em 0;
 }
 
 .homeGames {
   background-color: var(--dark2);
-  margin-top: 1rem;
+  margin-top: 1em;
   text-align: center;
 }
 
 .homeGamesItem {
   background-color: var(--dark);
   color: var(--light);
-  padding: 0.3rem 1rem 0 1rem;
-  transition: all 0.2s ease-in-out;
+  padding: 0.3em 1em 0 1em;
+  /* transition: all 0.2s ease-in-out; Apply this in global */
 }
 
 .homeGamesItem:hover {

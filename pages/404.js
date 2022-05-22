@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "../styles/pages/FourOFour.module.css";
+import styles from "../styles/pages/Error.module.css";
 import Button from "../components/utilities/Button";
 
-export default function FourOFour() {
+function FourOFour() {
 	return (
-		<div className={styles.FourOFour}>
+		<div className={styles.Error}>
 			<Head>
 				<title>404 Error | MMG</title>
 			</Head>
@@ -20,3 +20,5 @@ export default function FourOFour() {
 		</div>
 	);
 }
+
+export default FourOFour;

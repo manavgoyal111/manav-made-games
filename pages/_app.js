@@ -26,11 +26,11 @@ function MyApp({ Component, pageProps }) {
 			<style jsx global>
 				{`
 					:root {
-						--dark: ${!lightMode ? "#38a3a5" : "#ffffff"};
-						--dark2: ${!lightMode ? "#57cc99" : "#bffccd"};
-						--mid: ${!lightMode ? "#80ed99" : "#80ed99"};
-						--light2: ${!lightMode ? "#bffccd" : "#57cc99"};
-						--light: ${!lightMode ? "#ffffff" : "#38a3a5"};
+						--dark: ${!lightMode ? "#121212" : "#CCCCCC"};
+						--dark2: ${!lightMode ? "#2A2A2A" : "#737373"};
+						--mid: ${!lightMode ? "#0078F2" : "#0078F2"};
+						--light2: ${!lightMode ? "#737373" : "#2A2A2A"};
+						--light: ${!lightMode ? "#CCCCCC" : "#121212"};
 						--red: red;
 						--yellow: rgb(151, 151, 35);
 					}
@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
 			<Head>
 				<meta
 					name="description"
-					content="Play exciting Games for free. Listen to Music"
+					content="Play exciting Games for free. Listen to Music."
 				/>
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -56,5 +56,6 @@ function MyApp({ Component, pageProps }) {
 
 export default wrapper.withRedux(MyApp);
 
+// Transfer all assets from public folder to imagekit
 // Navbar.js - Just call "setColorMode" and transfer all its code in redux store
 // Access redux store "colorMode" variable in _app.js to remove "setLightMode" function and "lightMode" variable from _app.js, "colorMode" variable from navbar.js and initialize colorMode by getting value from local storage instead of initializing it in _app.js

@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "../styles/pages/FiveOO.module.css";
+import styles from "../styles/pages/Error.module.css";
 import Button from "../components/utilities/Button";
 
-export default function FiveOO() {
+function FiveOO() {
 	return (
-		<div className={styles.FiveOO}>
+		<div className={styles.Error}>
 			<Head>
 				<title>500 Error | MMG</title>
 			</Head>
@@ -20,3 +20,5 @@ export default function FiveOO() {
 		</div>
 	);
 }
+
+export default FiveOO;

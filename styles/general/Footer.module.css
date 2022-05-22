@@ -2,26 +2,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--dark);
+  background-color: var(--dark2);
   color: var(--light);
-  min-height: 3rem;
-  padding: 0.3rem 1rem 0 1rem;
-  border-top: 1px solid var(--dark2);
-  font-size: clamp(1.3rem, 50%, 2rem);
+  border-top: 1px solid var(--mid);
+  min-height: 2em;
+  padding: 0.2em 1em;
+  font-size: clamp(1.3em, 50%, 2em);
 }
 
 .footerInfo {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--light);
+  margin-top: 0.2em;
 }
 
 .footerLine {
   background-color: var(--light2);
-  height: 20px;
+  height: 25px;
   width: 2px;
-  margin: 0 1rem;
+  margin: 0 1em;
 }
 
 .footerLinks {
@@ -33,12 +33,6 @@
 .footerLinksIcon {
   color: var(--light);
   cursor: pointer;
-  font-size: 1.2rem;
-  margin: 0.2rem 0 0 1rem;
-}
-
-@media screen and (max-width: 768px) {
-  .footer {
-    font-size: 1rem;
-  }
+  font-size: 1em;
+  margin: 0.5em 0 0 1em;
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "../styles/music-player/MusicPlayer.module.css";
 import { MusicData } from "../components/music-player/MusicData";
 
-export default function MusicPlayer() {
+function MusicPlayer() {
 	return (
 		<div className={styles.player}>
 			<Head>
@@ -27,3 +27,5 @@ export default function MusicPlayer() {
 		</div>
 	);
 }
+
+export default MusicPlayer;
