@@ -1,24 +1,21 @@
-import React, { useContext } from "react";
+import { connect } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FaLightbulb } from "react-icons/fa";
 import { HiLightBulb } from "react-icons/hi";
 import styles from "../../styles/general/Navbar.module.css";
-import { CredentialsContext } from "../../context/CredentialsContext";
+import { setColorMode } from "../../store/actions/colorModeAction";
 
-export default function Navbar({ setLightMode }) {
+function Navbar({ setLightMode, colorMode, setColorMode }) {
 	// React Router Variable
 	const router = useRouter();
 
-	// Context Variable
-	const { lightMode, changeLightMode } = useContext(CredentialsContext);
-
 	// Functions
-	const changeMode = (value) => {
-		setLightMode(value);
-		changeLightMode(value);
-		localStorage.setItem("mmg-lightMode", JSON.stringify(value));
+	const changeMode = () => {
+		setColorMode(!colorMode);
+		setLightMode(!colorMode);
+		localStorage.setItem("mmg-colorMode", JSON.stringify(!colorMode));
 	};
 
 	return (
@@ -47,12 +44,22 @@ export default function Navbar({ setLightMode }) {
 			</div>
 
 			<div
-				onClick={() => changeMode(!lightMode)}
+				onClick={() => changeMode()}
 				className={styles.navBulb}
-				id={!lightMode ? `${styles["navBulbMove"]}` : ""}
+				id={colorMode ? `${styles["navBulbMove"]}` : ""}
 			>
-				{!lightMode ? <FaLightbulb size={20} /> : <HiLightBulb size={30} />}
+				{colorMode ? <FaLightbulb size={20} /> : <HiLightBulb size={30} />}
 			</div>
 		</nav>
 	);
 }
+
+const mapStateToProps = (state) => ({
+	colorMode: state.colorModeReducer.colorMode,
+});
+
+const mapDispatchToProps = {
+	setColorMode,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
