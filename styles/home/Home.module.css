@@ -9,19 +9,23 @@
 }
 
 .homeGames {
-  background-color: var(--dark2);
-  margin-top: 1em;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  width: 90%;
+  grid-gap: 1rem;
+  margin: 1rem 0;
 }
 
 .homeGamesItem {
-  background-color: var(--dark);
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  border-radius: 5px;
+  background-color: var(--mid);
   color: var(--light);
   padding: 0.3em 1em 0 1em;
-  /* transition: all 0.2s ease-in-out; Apply this in global */
 }
 
 .homeGamesItem:hover {
-  background-color: var(--dark2);
   box-shadow: 3px 3px 5px 2px var(--dark2);
+  opacity: 0.8;
 }

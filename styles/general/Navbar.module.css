@@ -25,6 +25,7 @@
 }
 
 .navbarLinks>li a {
+  transition: all 0.1s ease-in-out;
   font-weight: bold;
   padding: 0 0.3em;
   /* margin-top: 0.4em; */
