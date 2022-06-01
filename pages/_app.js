@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Provider } from "react-redux";
+import React, { useState } from "react";
 import Head from "next/head";
+import { Provider } from "react-redux";
 import "../styles/global/globals.css";
 import "../styles/global/utilities.css";
 import "../styles/global/scrollbar.css";
@@ -10,16 +10,13 @@ import Footer from "../components/general/Footer";
 
 function MyApp({ Component, pageProps }) {
 	// Use State
-	const [lightMode, setLightMode] = useState(true);
+	const [lightMode, setLightMode] = useState(
+		store.getState().colorModeReducer.lightMode
+	);
 
-	// Use Effect
-	useEffect(() => {
-		// Getting colorMode value from local storage and initializing
-		const storedColorMode = JSON.parse(localStorage.getItem("mmg-colorMode"));
-		if (storedColorMode !== null) {
-			setLightMode(storedColorMode);
-		}
-	}, []);
+	store.subscribe(() => {
+		setLightMode(store.getState().colorModeReducer.lightMode);
+	});
 
 	return (
 		<Provider store={store}>
@@ -42,12 +39,12 @@ function MyApp({ Component, pageProps }) {
 					name="description"
 					content="Play exciting Games for free. Listen to Music."
 				/>
-				<meta charset="utf-8" />
+				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Navbar setLightMode={setLightMode} />
+			<Navbar />
 			<Component {...pageProps} />
 			<Footer />
 		</Provider>
@@ -56,6 +53,4 @@ function MyApp({ Component, pageProps }) {
 
 export default wrapper.withRedux(MyApp);
 
-// Transfer all assets from public folder to imagekit
-// Navbar.js - Just call "setColorMode" and transfer all its code in redux store
-// Access redux store "colorMode" variable in _app.js to remove "setLightMode" function and "lightMode" variable from _app.js, "colorMode" variable from navbar.js and initialize colorMode by getting value from local storage instead of initializing it in _app.js
+// Console Error when loading page in darkMode
