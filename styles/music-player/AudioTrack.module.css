@@ -21,32 +21,52 @@
 
 /* Progress Bar */
 .audioTrackProgressBar {
-  --set-before-width: 0;
-  -webkit-appearance: none;
-  width: 50vw;
+  --set-before-width: 100px;
+
+  appearance: none;
   position: relative;
-  cursor: pointer;
-}
-
-.audioTrackProgressBar:focus {
+  background-color: var(--light);
+  width: 50vw;
+  height: 10px;
   outline: none;
-}
-
-.audioTrackProgressBar::-webkit-slider-runnable-track {
-  height: 0.7em;
-  cursor: pointer;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px var(--dark2);
-  background: var(--dark2);
   border-radius: 10px;
-  border: 0.2px solid black;
+  cursor: pointer;
 }
 
+/* For Safari */
+.audioTrackProgressBar::-webkit-slider-runnable-track {
+  position: relative;
+  background-color: var(--light);
+  width: 50vw;
+  height: 10px;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* For Firefox */
+.audioTrackProgressBar::-moz-range-track {
+  position: relative;
+  background-color: var(--light);
+  width: 50vw;
+  height: 10px;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.audioTrackProgressBar::-moz-range-outer {
+  border: 0;
+}
+
+/* For Chrome & Safari */
 .audioTrackProgressBar::before {
   content: "";
-  height: 0.7em;
+  height: 10px;
   width: var(--set-before-width);
-  background-color: var(--dark);
-  border-radius: 10px;
+  background-color: var(--light2);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   position: absolute;
   top: 0;
   left: 0;
@@ -54,27 +74,51 @@
   cursor: pointer;
 }
 
+/* For Firefox */
+.audioTrackProgressBar::-moz-range-progress {
+  background-color: var(--light2);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 10px;
+}
+
+/* For Chrome & Safari */
 .audioTrackProgressBar::-webkit-slider-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px black;
-  border: 1px solid #000000;
-  height: 2.5em;
-  width: 1em;
-  border-radius: 5px;
-  background: var(--dark);
-  cursor: pointer;
   -webkit-appearance: none;
+
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+  background: var(--dark2);
+  cursor: pointer;
   position: relative;
-  margin-top: -12px;
+  margin-top: -2px;
   z-index: 3;
+  box-sizing: border-box;
 }
 
 .audioTrackProgressBar:active::-webkit-slider-thumb {
   transform: scale(1.2);
-  background: var(--dark2);
+  background: var(--dark);
 }
 
-.audioTrackProgressBar:focus::-webkit-slider-runnable-track {
+/* For Firefox */
+.audioTrackProgressBar::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: transparent;
   background: var(--dark2);
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.audioTrackProgressBar:active:-moz-range-thumb {
+  transform: scale(1.2);
+  background: var(--dark);
 }
 
 /* Buttons */

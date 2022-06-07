@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import {
 	FaPlay,
@@ -9,83 +9,17 @@ import {
 	FaArrowLeft,
 } from "react-icons/fa";
 import styles from "../../styles/music-player/AudioTrack.module.css";
+import { useAudioPlayer } from "./AudioHook";
 import { MusicData } from "./MusicData";
 
 const MusicPlayer = () => {
-	// Variables
-	const [audioElement, setAudioElement] = useState(
-		MusicData[0].music
-		// new Audio(MusicData[0].music)
-	);
-	const [isPlaying, setIsPlaying] = useState(false);
+	// Temp
+	// const [audioElement, setAudioElement] = useState(
+	// 	MusicData[0].music
+	// 	new Audio(MusicData[0].music)
+	// );
 	const [currentMusic, setCurrentMusic] = useState(0);
-	const [duration, setDuration] = useState(0);
-	const [currentTime, setCurrentTime] = useState(0);
-
-	const audioPlayer = useRef(); // reference our audio component
-	const progressBar = useRef(); // reference our progress bar
-	const animationRef = useRef(); // reference the animation
-	const playingGif = useRef(); // reference the Gif
-
-	// Use Effects
-	// useEffect(() => {
-	// 	const seconds = Math.floor(audioPlayer.current.duration);
-	// 	setDuration(seconds);
-	// 	progressBar.current.max = seconds;
-	// }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
-
-	// // Functions
-	const togglePlayPause = () => {
-		const prevValue = isPlaying;
-		setIsPlaying(!prevValue);
-
-		if (!prevValue) {
-			audioPlayer.current.play();
-			playingGif.current.style.setProperty("opacity", "1");
-			animationRef.current = requestAnimationFrame(whilePlaying);
-		} else {
-			audioPlayer.current.pause();
-			playingGif.current.style.setProperty("opacity", "0");
-			cancelAnimationFrame(animationRef.current);
-		}
-	};
-
-	const calculateTime = (secs) => {
-		const minutes = Math.floor(secs / 60);
-		const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
-		const seconds = Math.floor(secs % 60);
-		const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-		return `${returnedMinutes}:${returnedSeconds}`;
-	};
-
-	const changeRange = () => {
-		audioPlayer.current.currentTime = progressBar.current.value;
-		changePlayerCurrentTime();
-	};
-
-	const changePlayerCurrentTime = () => {
-		progressBar.current.style.setProperty(
-			"--set-before-width",
-			`${(progressBar.current.value / duration) * 100}%`
-		);
-		setCurrentTime(progressBar.current.value);
-	};
-
-	const whilePlaying = () => {
-		progressBar.current.value = audioPlayer.current.currentTime;
-		changePlayerCurrentTime();
-		animationRef.current = requestAnimationFrame(whilePlaying);
-	};
-
-	const backThirty = () => {
-		progressBar.current.value = Number(progressBar.current.value - 30);
-		changeRange();
-	};
-
-	const forwardThirty = () => {
-		progressBar.current.value = Number(progressBar.current.value + 30);
-		changeRange();
-	};
+	const playingGif = useRef(); // Reference to Gif
 
 	const prevMusic = () => {
 		if (currentMusic > 0) {
@@ -112,6 +46,20 @@ const MusicPlayer = () => {
 		}
 		changeRange();
 	};
+
+	// AudioHook
+	const {
+		isPlaying,
+		duration,
+		currentTime,
+		audioPlayer,
+		progressBar,
+		calculateTime,
+		togglePlayPause,
+		changeRange,
+		backThirty,
+		forwardThirty,
+	} = useAudioPlayer();
 
 	return (
 		<div className={styles.audioTrack}>
@@ -142,8 +90,7 @@ const MusicPlayer = () => {
 
 				{/* Total Duration */}
 				<div className={styles.audioTrackTime}>
-					{/* {duration && !isNaN(duration) && calculateTime(duration)} */}
-					{isNaN(duration) ? "0:00" : calculateTime(duration)}
+					{isNaN(duration) ? "00:00" : calculateTime(duration)}
 				</div>
 			</div>
 
@@ -161,9 +108,9 @@ const MusicPlayer = () => {
 				{/* Play / Pause */}
 				<button onClick={togglePlayPause}>
 					{isPlaying ? (
-						<FaPauseCircle className={styles.audioTrackButtonArrow} />
+						<FaPauseCircle size={25} className={styles.audioTrackButtonArrow} />
 					) : (
-						<FaPlay className={styles.audioTrackButtonArrow} />
+						<FaPlay size={25} className={styles.audioTrackButtonArrow} />
 					)}
 				</button>
 
