@@ -8,7 +8,7 @@ import { HiLightBulb } from "react-icons/hi";
 import styles from "../../styles/general/Navbar.module.css";
 import { changeColorMode } from "../../store/actions/colorModeAction";
 
-function Navbar({ lightMode, changeColorMode }) {
+const Navbar = ({ lightMode, changeColorMode }) => {
 	// React Router Variable
 	const router = useRouter();
 
@@ -46,7 +46,7 @@ function Navbar({ lightMode, changeColorMode }) {
 			</div>
 		</div>
 	);
-}
+};
 
 Navbar.propTypes = {
 	lightMode: PropTypes.bool,

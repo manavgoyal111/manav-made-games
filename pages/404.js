@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "../styles/pages/Error.module.css";
 import Button from "../components/utilities/Button";
 
-function FourOFour() {
+const FourOFour = () => {
 	return (
 		<div className={styles.Error}>
 			<Head>
@@ -19,6 +19,6 @@ function FourOFour() {
 			</Link>
 		</div>
 	);
-}
+};
 
 export default FourOFour;

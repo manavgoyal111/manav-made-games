@@ -5,7 +5,7 @@ import styles from "../styles/home/Home.module.css";
 import { capitalise } from "../components/utilities/Capitalise";
 import { GamesData } from "../components/home/GameData";
 
-function Home() {
+const Home = () => {
 	return (
 		<div className={styles.home}>
 			<Head>
@@ -28,6 +28,6 @@ function Home() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Home;

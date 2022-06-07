@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "../styles/pages/Error.module.css";
 import Button from "../components/utilities/Button";
 
-function FiveOO() {
+const FiveOO = () => {
 	return (
 		<div className={styles.Error}>
 			<Head>
@@ -19,6 +19,6 @@ function FiveOO() {
 			</Link>
 		</div>
 	);
-}
+};
 
 export default FiveOO;

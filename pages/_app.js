@@ -8,7 +8,7 @@ import { wrapper, store } from "../store/store";
 import Navbar from "../components/general/Navbar";
 import Footer from "../components/general/Footer";
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
 	// Use State
 	const [lightMode, setLightMode] = useState(
 		store.getState().colorModeReducer.lightMode
@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }) {
 			<Footer />
 		</Provider>
 	);
-}
+};
 
 export default wrapper.withRedux(MyApp);
 

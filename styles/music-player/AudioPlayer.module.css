@@ -1,0 +1,30 @@
+.audioPlayer {
+  display: flex;
+  flex-direction: column;
+  color: var(--light);
+  min-height: 70vh;
+}
+
+.audioPlayerSongs {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid var(--light);
+  border-radius: 10px;
+  background-color: var(--mid);
+}
+
+.audioPlayerSongs:hover {
+  background-color: var(--dark2);
+  /* color: var(--light); */
+}
+
+.audioPlayerSongsCover {
+  border-radius: 10px;
+}
+
+.audioPlayerSongsText {
+  margin: 0 3em;
+  font-weight: bolder;
+  font-size: 1.5em;
+}

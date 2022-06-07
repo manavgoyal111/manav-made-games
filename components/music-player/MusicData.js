@@ -1,33 +1,33 @@
 const MusicData = [
 	{
 		id: 1,
-		cover: "assets/player/cover/1.jpg",
-		music: "assets/player/music/1.mp3",
-		name: "I am a Barbie Girl",
+		cover: "https://ik.imagekit.io/manav11goyal11/mmg/music-player/1.jpg",
+		music: "audio/hard-times.mp3",
+		name: "Hard Times",
 	},
 	{
 		id: 2,
-		cover: "assets/player/cover/2.jpg",
-		music: "assets/player/music/2.mp3",
-		name: "Clash Royle Theme Song",
+		cover: "https://ik.imagekit.io/manav11goyal11/mmg/music-player/2.jpg",
+		music: "audio/into-the-fire.mp3",
+		name: "Into the Fire",
 	},
 	{
 		id: 3,
-		cover: "assets/player/cover/3.jpg",
-		music: "assets/player/music/3.mp3",
-		name: "Clash Royle Gameplay",
+		cover: "https://ik.imagekit.io/manav11goyal11/mmg/music-player/3.jpg",
+		music: "audio/judas.mp3",
+		name: "Judas",
 	},
 	{
 		id: 4,
-		cover: "assets/player/cover/4.jpg",
-		music: "assets/player/music/4.mp3",
-		name: "Doremon Title Song",
+		cover: "https://ik.imagekit.io/manav11goyal11/mmg/music-player/4.jpg",
+		music: "audio/phenomenal.mp3",
+		name: "Phenomenal",
 	},
 	{
 		id: 5,
-		cover: "assets/player/cover/5.jpg",
-		music: "assets/player/music/5.mp3",
-		name: "Friends Title Song",
+		cover: "https://ik.imagekit.io/manav11goyal11/mmg/music-player/5.jpg",
+		music: "audio/the-rising-sun.mp3",
+		name: "The Rising Sun",
 	},
 ];
 

@@ -1,0 +1,113 @@
+.audioTrack {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mid);
+  border: 1px solid var(--light);
+  border-radius: 10px;
+}
+
+.audioTrackProgress {
+  display: flex;
+  margin: 1em;
+}
+
+.audioTrackTime {
+  margin: 0 1em;
+}
+
+/* Progress Bar */
+.audioTrackProgressBar {
+  --set-before-width: 0;
+  -webkit-appearance: none;
+  width: 50vw;
+  position: relative;
+  cursor: pointer;
+}
+
+.audioTrackProgressBar:focus {
+  outline: none;
+}
+
+.audioTrackProgressBar::-webkit-slider-runnable-track {
+  height: 0.7em;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px var(--dark2);
+  background: var(--dark2);
+  border-radius: 10px;
+  border: 0.2px solid black;
+}
+
+.audioTrackProgressBar::before {
+  content: "";
+  height: 0.7em;
+  width: var(--set-before-width);
+  background-color: var(--dark);
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.audioTrackProgressBar::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px black;
+  border: 1px solid #000000;
+  height: 2.5em;
+  width: 1em;
+  border-radius: 5px;
+  background: var(--dark);
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: relative;
+  margin-top: -12px;
+  z-index: 3;
+}
+
+.audioTrackProgressBar:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background: var(--dark2);
+}
+
+.audioTrackProgressBar:focus::-webkit-slider-runnable-track {
+  background: var(--dark2);
+}
+
+/* Buttons */
+.audioTrackButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5em;
+  flex-wrap: wrap;
+}
+
+.audioTrackButton>button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0.1em 0.8em;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid black;
+  background-color: var(--dark);
+  border-radius: 50%;
+  color: var(--light);
+}
+
+.audioTrackButtonArrow {
+  color: var(--light);
+  background: var(--dark);
+  border: none;
+}
+
+.audioTrackGif {
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}

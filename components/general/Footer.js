@@ -1,7 +1,7 @@
 import { FaUserAlt, FaGithub } from "react-icons/fa";
 import styles from "../../styles/general/Footer.module.css";
 
-function Footer() {
+const Footer = () => {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footerInfo}>
@@ -40,6 +40,6 @@ function Footer() {
 			</div>
 		</footer>
 	);
-}
+};
 
 export default Footer;
