@@ -1,31 +1,126 @@
 .home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  background-color: var(--dark);
-  color: var(--light);
-  padding: 2em 0;
+    min-height: 100vh;
+    background-color: var(--dark);
+    color: var(--light);
+    --handle-size: 3rem;
+    --img-gap: .25rem;
 }
 
-.homeGames {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  width: 90%;
-  grid-gap: 1rem;
-  margin: 1rem 0;
+.homeHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em calc(var(--img-gap) * 2 + var(--handle-size));
+    align-items: center;
 }
 
-.homeGamesItem {
-  transition: all 0.2s ease-in-out;
-  text-align: center;
-  border-radius: 5px;
-  background-color: var(--mid);
-  color: var(--light);
-  padding: 0.3em 1em 0 1em;
+.homeHeader>h2 {
+    margin: 0;
 }
 
-.homeGamesItem:hover {
-  box-shadow: 3px 3px 5px 2px var(--dark2);
-  opacity: 0.8;
+.homeHeaderProgress {
+    display: flex;
+    gap: .25rem;
+}
+
+.homeHeaderProgressItem {
+    flex: 0 0 1.5rem;
+    min-width: 1.5rem;
+    height: .5rem;
+    background-color: var(--light2);
+    opacity: 0.5;
+}
+
+.homeHeaderProgressItem.active {
+    opacity: 1;
+}
+
+.homeSlider {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.homeSliderGames {
+    --items-per-screen: 4;
+    --slider-index: 0;
+    display: flex;
+    flex-grow: 1;
+    width: calc(100% - 10em);
+    /* margin: 0 var(--img-gap); */
+    transform: translateX(calc(var(--slider-index) * -100%));
+    transition: transform 250ms ease-in-out;
+}
+
+.homeSliderGamesItem {
+    flex: 0 0 calc(100% / var(--items-per-screen));
+    max-width: calc(100% / var(--items-per-screen));
+    padding: 0.5em 1em 0 1em;
+    color: var(--light);
+    background-color: var(--mid);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.homeSliderGamesItem:hover {
+    box-shadow: 3px 3px 5px 2px var(--dark2);
+    opacity: 0.8;
+    /* transform: scale(1.1); */
+}
+
+.homeSliderHandle {
+    border: none;
+    border-radius: 5px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: var(--light2);
+    opacity: 0.3;
+    z-index: 10;
+    /* margin: var(--img-gap) 0; */
+    width: var(--handle-size);
+    cursor: pointer;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    line-height: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+.homeSliderHandle:hover,
+.homeSliderHandle:focus {
+    opacity: 1;
+}
+
+.homeSliderHandleLeft {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.homeSliderHandleRight {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.homeSliderHandleText {
+    transition: transform 150ms ease-in-out;
+}
+
+.homeSliderHandle:hover .homeSliderHandleText,
+.homeSliderHandle:focus .homeSliderHandleText {
+    transform: scale(1.2);
+}
+
+@media (max-width: 1000px) {
+    .slider {
+        --items-per-screen: 3;
+    }
+}
+
+@media (max-width: 500px) {
+    .slider {
+        --items-per-screen: 2;
+    }
 }

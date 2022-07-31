@@ -23,6 +23,14 @@ const GamesData = [
 		slug: "guess-the-number",
 		url: "https://ik.imagekit.io/manav11goyal11/mmg/games-data/guess-the-number.jpg",
 	},
+	{
+		slug: "game1",
+		url: "https://ik.imagekit.io/manav11goyal11/mmg/games-data/guess-the-number.jpg",
+	},
+	{
+		slug: "game2",
+		url: "https://ik.imagekit.io/manav11goyal11/mmg/games-data/guess-the-number.jpg",
+	},
 ];
 
 export { GamesData };

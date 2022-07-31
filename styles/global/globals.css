@@ -3,21 +3,21 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html,
 body {
-  margin: 0;
-  font-family: "Baloo Bhaina 2", cursive;
-  font-size: clamp(1em, 50%, 2em);
-  line-height: 1.5;
-  transition: all 0.5s ease-in-out;
+    margin: 0;
+    font-family: "Baloo Bhaina 2", cursive;
+    font-size: clamp(1em, 50%, 2em);
+    line-height: 1.5;
+    transition: all 0.5s ease-in-out;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
