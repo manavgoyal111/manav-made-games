@@ -1,0 +1,63 @@
+.modalBG {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.modalCentered {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modalBody {
+    width: 250px;
+    height: 150px;
+    background: white;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.modalBodyHeader {
+    height: 50px;
+    background: white;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modalBodyHeaderHeading {
+    color: var(--light);
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.modalBodyContent {
+    padding: 10px;
+    font-size: 14px;
+    color: var(--light);
+    text-align: center;
+}
+
+.modalBodyActions {
+    position: absolute;
+    bottom: 2px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.modalBodyActionsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

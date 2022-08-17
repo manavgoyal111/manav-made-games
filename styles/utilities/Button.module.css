@@ -1,15 +1,18 @@
 .button {
-  background-color: var(--mid);
-  color: var(--light);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 0.5em 1em;
-  font-size: 1em;
-  font-weight: bold;
+    background-color: var(--mid);
+    color: var(--dark);
+    margin-top: 10px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
 .button:hover {
-  box-shadow: 3px 3px 5px var(--dark2);
-  opacity: 0.8;
+    box-shadow: 3px 3px 5px var(--dark2);
+    transform: translateY(-1px);
+    opacity: 0.8;
 }

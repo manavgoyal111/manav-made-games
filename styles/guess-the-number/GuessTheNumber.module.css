@@ -24,7 +24,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2em 0;
+    background-color: var(--dark2);
+    padding: 1em;
+    border-radius: 10px;
 }
 
 .guessTheNumberInput>input {
@@ -34,9 +36,16 @@
 }
 
 .guessTheNumberInput>div {
+    margin: 1em 0;
+}
+
+.guessTheNumberInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 2em 0;
 }
 
-.guessTheNumberInput>p {
+.guessTheNumberInfo>p {
     font-size: large;
 }

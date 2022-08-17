@@ -6,20 +6,39 @@ import { ToastContainer, toast } from "react-toastify";
 import styles from "../styles/guess-the-number/GuessTheNumber.module.css";
 import "react-toastify/dist/ReactToastify.css";
 import Button from "../components/utilities/Button";
+import NewGameModal from "../components/utilities/NewGameModal";
 
 const GuessTheNumber = () => {
 	// Variables
 	const [guessNumber, setGuessNumber] = useState(0);
 	const [totalGuessScore, setTotalGuessScore] = useState(0);
 	const [inputNumber, setInputNumber] = useState(0);
-	const randomNumber = useRef(Math.floor(Math.random() * 100));
+	const [isOpen, setIsOpen] = useState(false);
+	const [startNewGame, setStartNewGame] = useState("Yes");
+
+	const randomNumber = useRef();
 
 	// Functions
+	useEffect(() => {
+		randomNumber.current = Math.floor(Math.random() * 100);
+		if (startNewGame === "No") {
+			toast.info(`Your total score is: ${totalGuessScore}`, {
+				position: "top-left",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
+			setTotalGuessScore(0);
+		}
+	}, [startNewGame]);
+
 	const checkNumber = () => {
 		setGuessNumber(guessNumber + 1);
-		// console.log(inputNumber, randomNumber.current);
-		if (parseInt(inputNumber) === randomNumber.current) {
-			toast.success(`Your score is ${guessNumber}`, {
+		if (guessNumber >= 99) {
+			toast.error(`Your Lost, Try Again!`, {
 				position: "top-left",
 				autoClose: 2000,
 				hideProgressBar: false,
@@ -29,27 +48,43 @@ const GuessTheNumber = () => {
 				progress: undefined,
 			});
 			setGuessNumber(0);
-			setTotalGuessScore(totalGuessScore + 1);
-		} else if (parseInt(inputNumber) >= randomNumber.current) {
-			toast.info(`Your Number is Higher!`, {
-				position: "top-left",
-				autoClose: 2000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-			});
+			setTotalGuessScore(0);
+			setIsOpen(true);
 		} else {
-			toast.info(`Your Number is Lower!`, {
-				position: "top-left",
-				autoClose: 2000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-			});
+			if (parseInt(inputNumber) === randomNumber.current) {
+				toast.success(`Your score is ${totalGuessScore}`, {
+					position: "top-left",
+					autoClose: 2000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				});
+				setGuessNumber(0);
+				setTotalGuessScore(totalGuessScore + 100 - guessNumber);
+				setIsOpen(true);
+			} else if (parseInt(inputNumber) >= randomNumber.current) {
+				toast.info(`Your Number is Higher!`, {
+					position: "top-left",
+					autoClose: 2000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				});
+			} else {
+				toast.info(`Your Number is Lower!`, {
+					position: "top-left",
+					autoClose: 2000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				});
+			}
 		}
 	};
 
@@ -75,10 +110,12 @@ const GuessTheNumber = () => {
 				pauseOnHover
 			/>
 
+			{isOpen && <NewGameModal setIsOpen={setIsOpen} setStartNewGame={setStartNewGame} />}
+
 			<div className={styles.guessTheNumberHeading}>
 				<h1>Guess the Number</h1>
 				<h3>Score: {totalGuessScore}</h3>
-				<h4>Change Taken: {guessNumber}</h4>
+				<h4>Turn: {guessNumber}</h4>
 			</div>
 
 			<div className={styles.guessTheNumberInput}>
@@ -92,9 +129,10 @@ const GuessTheNumber = () => {
 				<div onClick={checkNumber}>
 					<Button btnName="Guess" />
 				</div>
-				<p>Number is between 1 and 100</p>
-				<p>Player with minimum Score Wins!</p>
-				{/* <p>{randomNumber.current}</p> */}
+			</div>
+			<div className={styles.guessTheNumberInfo}>
+				<p>Number can be from 1 to 100</p>
+				<p>You will get 100 turns to guess the correct number</p>
 			</div>
 		</div>
 	);
