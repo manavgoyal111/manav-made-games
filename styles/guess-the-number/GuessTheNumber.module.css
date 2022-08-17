@@ -1,0 +1,42 @@
+.guessTheNumber {
+    min-height: 100vh;
+    background-color: var(--dark);
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5em;
+}
+
+.guessTheNumberHeading {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+    width: 80%;
+}
+
+.guessTheNumberHeading>h3,
+.guessTheNumberHeading>h4 {
+    align-self: flex-end;
+}
+
+.guessTheNumberInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em 0;
+}
+
+.guessTheNumberInput>input {
+    font-size: larger;
+    outline: none;
+    padding: 0.5em;
+}
+
+.guessTheNumberInput>div {
+    margin: 2em 0;
+}
+
+.guessTheNumberInput>p {
+    font-size: large;
+}

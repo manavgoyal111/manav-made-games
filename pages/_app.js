@@ -10,9 +10,7 @@ import Footer from "../components/general/Footer";
 
 const MyApp = ({ Component, pageProps }) => {
 	// Use State
-	const [lightMode, setLightMode] = useState(
-		store.getState().colorModeReducer.lightMode
-	);
+	const [lightMode, setLightMode] = useState(store.getState().colorModeReducer.lightMode);
 
 	store.subscribe(() => {
 		setLightMode(store.getState().colorModeReducer.lightMode);
@@ -35,10 +33,7 @@ const MyApp = ({ Component, pageProps }) => {
 			</style>
 
 			<Head>
-				<meta
-					name="description"
-					content="Play exciting Games for free. Listen to Music."
-				/>
+				<meta name="description" content="Play exciting Games for free. Listen to Music." />
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />

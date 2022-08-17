@@ -50,8 +50,8 @@ const Home = () => {
 		}
 	};
 
-	console.log("Slider Index", sliderIndex);
-	console.log("Slider Count", sliderCountRef.current);
+	// console.log("Slider Index", sliderIndex);
+	// console.log("Slider Count", sliderCountRef.current);
 
 	return (
 		<div className={styles.home}>
