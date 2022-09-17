@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { Provider } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/global/globals.css";
 import "../styles/global/utilities.css";
 import "../styles/global/scrollbar.css";
